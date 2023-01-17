@@ -7,13 +7,13 @@ public class Game {
 	Display display;
 
 	public Game() {
-		for (int i = 0; i < this.num_of_players; i++) {
-			this.players[i] = new Player();
-
-			this.players[i].name = "José";
-			this.players[i].score = 0;
+		int i = 0;
+		this.display = new Display();
+		for (String playerName : this.display.getPlayers()) {
+			this.players[i] = new Player(playerName);
+			i++;
 		}
-		display = new Display();
+		this.quit = false;
 	}
 
 	Player next_player() {

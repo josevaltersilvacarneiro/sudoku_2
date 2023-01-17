@@ -5,7 +5,7 @@ class Display {
 	boolean quit;
 
 	public Display() {
-		this.dimension = 2;
+		this.dimension = this.get_dimension();
 		this.length = this.dimension * this.dimension;
 		this.board = new Board();
 		this.quit = false;
@@ -23,5 +23,14 @@ class Display {
 			repr += "=";
 
 		return repr;
+	}
+
+	int get_dimension() {
+		return 2;
+	}
+
+	String[] getPlayers() {
+		String[] playerNames = {"Jose", "Maria"};
+		return playerNames;
 	}
 }
