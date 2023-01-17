@@ -3,17 +3,23 @@ import java.util.Random;
 class Section {
 	int dimension;
 	int length;
+	boolean free;
 
-	int[] section;
+	House section[];
 
 	public Section() {
 		this.dimension = 2;
-		this.length = this.dimension * this.dimension;
+		this.length    = this.dimension * this.dimension;
+		this.free      = true;
 
-		this.section = new int[this.length];
+		this.section = new House[this.length];
 
 		for (int i = 0; i < this.length; i++)
-			this.section[i] = this.rand(i);
+			this.section[i] = new House(this.rand(i));
+	}
+
+	public boolean isHouseFree(int house) {
+		return this.section[house].free;
 	}
 
 	protected int rand(int end) {
@@ -28,7 +34,7 @@ class Section {
 			randn = generator.nextInt(this.length)+1;
 
 			for (int i = 0; i < end && !found; i++)
-				if (randn == this.section[i])
+				if (randn == this.section[i].value)
 					found = true;
 		} while (found);
 
@@ -36,6 +42,6 @@ class Section {
 	}
 
 	public int index(int index) {
-		return this.section[index];
+		return this.section[index].value;
 	}
 }
