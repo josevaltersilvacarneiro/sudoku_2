@@ -1,19 +1,21 @@
+import java.util.ArrayList;
+
 public class Game {
 	int next_player;
 	int num_of_players = 2;
 	boolean diagonal;
 	boolean quit;
 
-	Player players[] = new Player[this.num_of_players];
+	ArrayList<Player> players;
 	Display display;
 
 	public Game() {
 		this.display  = new Display();
-		int i = 0;
-		for (String playerName : this.display.getPlayers()) {
-			this.players[i] = new Player(playerName);
-			i++;
-		}
+		this.players = new ArrayList<Player>();
+
+		for (String playerName : this.display.getPlayers())
+			this.players.add(new Player(playerName));
+		
 		this.diagonal = true;
 		this.quit     = false;
 	}
@@ -22,7 +24,7 @@ public class Game {
 		this.next_player += 1;
 		this.next_player %= this.num_of_players;
 
-		return this.players[next_player];
+		return this.players.get(this.next_player);
 	}
 
 	void show() {
@@ -35,11 +37,14 @@ public class Game {
 		move = this.display.getMove();
 
 		if (!this.display.isRowFree(move.row))
-			player.score += this.display.rowSum(move.row);
+			player.setScore(
+					this.display.rowSum(move.row));
 		if (!this.display.isColumnFree(move.column))
-			player.score += this.display.columnSum(move.column);
+			player.setScore(
+					this.display.columnSum(move.column));
 		if (!this.display.isDiagonalFree() && this.diagonal) {
-			player.score += this.display.diagonalSum();
+			player.setScore(
+					this.display.diagonalSum());
 			this.diagonal = false;
 		}
 	}
