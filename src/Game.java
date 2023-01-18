@@ -23,6 +23,14 @@ public class Game {
 	}
 
 	Player getNextPlayer() {
+		/*
+		 * To find out the next player to play,
+		 * increase the nextPlayer attribute by
+		 * one. After that, calculate the modu-
+		 * lus in relation to the number of
+		 * players.
+		 */
+
 		this.nextPlayer += 1;
 		this.nextPlayer %= this.numberOfPlayers;
 
