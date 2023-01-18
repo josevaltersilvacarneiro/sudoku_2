@@ -5,7 +5,7 @@ public class Sudoku {
 		while (!game.quit) {
 
 			game.show();
-			game.play(game.next_player());
+			game.play(game.getNextPlayer());
 		}
         }       
 }       

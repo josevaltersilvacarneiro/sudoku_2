@@ -22,7 +22,7 @@ public class Game {
 		this.quit            = false;
 	}
 
-	Player next_player() {
+	Player getNextPlayer() {
 		this.nextPlayer += 1;
 		this.nextPlayer %= this.numberOfPlayers;
 
