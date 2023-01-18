@@ -41,9 +41,11 @@ public class Game {
 		if (!this.display.isRowFree(move.row))
 			player.setScore(
 					this.display.rowSum(move.row));
+
 		if (!this.display.isColumnFree(move.column))
 			player.setScore(
 					this.display.columnSum(move.column));
+		
 		if (!this.display.isDiagonalFree() && !this.diagonal) {
 			player.setScore(
 					this.display.diagonalSum());
