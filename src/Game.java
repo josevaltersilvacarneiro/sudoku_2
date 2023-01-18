@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Game {
-	int     nextPlayer;
 	int     numberOfPlayers;
+	int     nextPlayer;
 	boolean diagonal;
 	boolean quit;
 
