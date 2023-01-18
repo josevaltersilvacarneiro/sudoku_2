@@ -1,30 +1,32 @@
 import java.util.ArrayList;
 
 public class Game {
-	int next_player;
-	int num_of_players = 2;
+	int     nextPlayer;
+	int     numberOfPlayers;
 	boolean diagonal;
 	boolean quit;
 
 	ArrayList<Player> players;
-	Display display;
+	Display 	  display;
 
 	public Game() {
-		this.display  = new Display();
-		this.players = new ArrayList<Player>();
+		this.display  	     = new Display();
+		this.players         = new ArrayList<Player>();
 
 		for (String playerName : this.display.getPlayers())
 			this.players.add(new Player(playerName));
 		
-		this.diagonal = true;
-		this.quit     = false;
+		this.numberOfPlayers = this.players.size();
+		this.nextPlayer	     = 0;
+		this.diagonal 	     = false;
+		this.quit            = false;
 	}
 
 	Player next_player() {
-		this.next_player += 1;
-		this.next_player %= this.num_of_players;
+		this.nextPlayer += 1;
+		this.nextPlayer %= this.numberOfPlayers;
 
-		return this.players.get(this.next_player);
+		return this.players.get(this.nextPlayer);
 	}
 
 	void show() {
@@ -42,10 +44,10 @@ public class Game {
 		if (!this.display.isColumnFree(move.column))
 			player.setScore(
 					this.display.columnSum(move.column));
-		if (!this.display.isDiagonalFree() && this.diagonal) {
+		if (!this.display.isDiagonalFree() && !this.diagonal) {
 			player.setScore(
 					this.display.diagonalSum());
-			this.diagonal = false;
+			this.diagonal = true;
 		}
 	}
 }
