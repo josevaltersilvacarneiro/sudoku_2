@@ -22,6 +22,10 @@ public class Game {
 		this.quit            = false;
 	}
 
+	boolean getQuit() {
+		return this.quit;
+	}
+
 	Player getNextPlayer() {
 		/*
 		 * To find out the next player to play,
