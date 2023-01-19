@@ -12,6 +12,10 @@ class Display {
 		this.quit      = false;
 	}
 
+	protected int getLength() {
+		return this.length;
+	}
+
 	private int convertToRS(int sr, int hc) {
 		return (sr / this.dimension) * this.dimension + hc / this.dimension;
 	}
