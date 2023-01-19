@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Game {
-	int     numberOfPlayers;
-	int     nextPlayer;
-	boolean diagonal;
-	boolean quit;
+	private int     numberOfPlayers;
+	private int     nextPlayer;
+	private boolean diagonal;
+	private boolean quit;
 
 	ArrayList<Player> players;
 	Display 	  display;
