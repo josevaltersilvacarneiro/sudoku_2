@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 class Display {
-	int dimension;
-	int length;
-	Board board;
+	int     dimension;
+	int     length;
 	boolean quit;
+
+	Board   board;
 
 	public Display() {
 		this.dimension = this.get_dimension();
