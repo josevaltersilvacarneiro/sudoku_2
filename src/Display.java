@@ -36,6 +36,18 @@ class Display {
 		return this.convertToCH(row, column);
 	}
 
+	private int getNumber() {
+		// Not implemented
+	}
+
+	public int getDimension() {
+		// Not implemented
+	}
+
+	public String[] getPlayers() {
+		// Not implemented
+	}
+
 	public Move getMove() {
 		int section, house;
 		int row, column;
