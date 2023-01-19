@@ -6,7 +6,7 @@ class Display {
 	Board   board;
 
 	public Display() {
-		this.dimension = this.get_dimension();
+		this.dimension = this.getDimension();
 		this.length    = this.dimension * this.dimension;
 		this.board     = new Board();
 		this.quit      = false;
