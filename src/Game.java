@@ -6,11 +6,11 @@ public class Game {
 	private boolean diagonal;
 	private boolean quit;
 
-	ArrayList<Player> players;
-	Display 	  display;
+	private ArrayList<Player> players;
+	private Display 	  display;
 
 	public Game() {
-		this.display  	     = new Display();
+		this.display  	     = new TerminalDisplay();
 		this.players         = new ArrayList<Player>();
 
 		for (String playerName : this.display.getPlayers())
@@ -22,11 +22,11 @@ public class Game {
 		this.quit            = false;
 	}
 
-	boolean getQuit() {
+	public boolean getQuit() {
 		return this.quit;
 	}
 
-	Player getNextPlayer() {
+	public Player getNextPlayer() {
 		/*
 		 * To find out the next player to play,
 		 * increase the nextPlayer attribute by
@@ -41,11 +41,12 @@ public class Game {
 		return this.players.get(this.nextPlayer);
 	}
 
-	void show() {
-		System.out.println(this.display.show());
+	public void show() {
+		this.display.update();
+		//System.out.println(this.display.show());
 	}
 
-	void play(Player player) {
+	public void play(Player player) {
 		Move move;
 
 		move = this.display.getMove();
