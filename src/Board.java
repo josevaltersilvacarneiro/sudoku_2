@@ -13,6 +13,10 @@ class Board {
 			board[i] = new Section();
 	}
 
+	public Section getSection(int section) {
+		return this.board[section];
+	}
+
 	public boolean isSectionFree(int section) {
 		return this.board[section].free;
 	}
@@ -20,7 +24,8 @@ class Board {
 	public boolean isHouseFree(int section, int house) {
 		return this.board[section].isHouseFree(house);
 	}
-
+}
+/*
 	String show() {
 		String repr = "";
 
@@ -37,5 +42,5 @@ class Board {
 		}
 		
 		return repr;
-	}
-}
+	}*/
+
