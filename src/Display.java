@@ -1,4 +1,4 @@
-class Display {
+public abstract class Display {
 	int     dimension;
 	int     length;
 	boolean quit;
@@ -42,14 +42,17 @@ class Display {
 
 	private int getNumber() {
 		// Not implemented
+		throw new UnsupportedOperationException();
 	}
 
 	public int getDimension() {
 		// Not implemented
+		throw new UnsupportedOperationException();
 	}
 
 	public String[] getPlayers() {
 		// Not implemented
+		throw new UnsupportedOperationException();
 	}
 
 	public Move getMove() {
