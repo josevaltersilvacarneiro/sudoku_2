@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Display {
 	int     dimension;
 	int     length;
@@ -14,54 +12,40 @@ class Display {
 		this.quit      = false;
 	}
 
-	private int getNumber() {
-		int number;
-		Scanner read = new Scanner(System.in);
-
-		number = read.nextInt();
-		
-		return number;
+	private int convertToRS(int sr, int hc) {
+		return (sr / this.dimension) * this.dimension + hc / this.dimension;
 	}
 
-	private int convertToRow(int section, int house) {
-		return (section / this.dimension) * this.dimension + house / this.dimension;
+	private int convertToCH(int sr, int hc) {
+		return (sr % this.dimension) * this.dimension + hc % this.dimension;
 	}
 
-	private int convertToColumn(int section, int house) {
-		return (section % this.dimension) * this.dimension + house % this.dimension;
+	protected int convertToRow(int section, int house) {
+		return this.convertToRS(section, house);
 	}
 
-	String show() {
-		String repr;
-
-		repr = "";
-		for (int i = 0; i < 30; i++)
-			repr += "=";
-		repr += "\n";
-		repr += this.board.show();
-		for (int i = 0; i < 30; i++)
-			repr += "=";
-
-		return repr;
+	protected int convertToColumn(int section, int house) {
+		return this.convertToCH(section, house);
 	}
 
-	int get_dimension() {
-		return 2;
+	protected int convertToSection(int row, int column) {
+		return this.convertToRS(row, column);
 	}
 
-	String[] getPlayers() {
-		String[] playerNames = {"Jose", "Maria"};
-		return playerNames;
+	protected int convertToHouse(int row, int column) {
+		return this.convertToCH(row, column);
 	}
 
-	Move getMove() {
+	public Move getMove() {
 		int section, house;
 		int row, column;
+
 		Move move;
 		
 		do {
 			section = getNumber();
 			house   = getNumber();
+
 			row	= this.convertToRow(section, house);
 			column	= this.convertToColumn(section, house);
 
@@ -79,27 +63,27 @@ class Display {
 		return move;
 	}
 
-	boolean isRowFree(int row) {
+	public boolean isRowFree(int row) {
 		return true;
 	}
 
-	boolean isColumnFree(int column) {
+	public boolean isColumnFree(int column) {
 		return true;
 	}
 
-	boolean isDiagonalFree() {
+	public boolean isDiagonalFree() {
 		return true;
 	}
 
-	int rowSum(int row) {
+	public int rowSum(int row) {
 		return 0;
 	}
 
-	int columnSum(int column) {
+	public int columnSum(int column) {
 		return 0;
 	}
 
-	int diagonalSum() {
+	public int diagonalSum() {
 		return 1;
 	}
 }
