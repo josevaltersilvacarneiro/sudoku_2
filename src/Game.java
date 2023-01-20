@@ -7,7 +7,7 @@ public class Game {
 	private boolean quit;
 
 	private ArrayList<Player> players;
-	private Display 	  display;
+	private TerminalDisplay   display;
 
 	public Game() {
 		this.display  	     = new TerminalDisplay();
