@@ -5,10 +5,24 @@ class TerminalDisplay extends Display {
 	public TerminalDisplay() {
         }
 
+	private int getNumber(String message) {
+        	int     number;
+
+                Scanner read;
+
+                read   = new Scanner(System.in);
+		System.out.print(message);
+                number = read.nextInt();
+                
+                return number;
+        }
+	
+	@Override
         public int getDimension() {
                 return 2;
         }
 
+	@Override
 	public String[] getPlayers() {
                 String[] playerNames = {"Jose", "Maria"};
                 
@@ -16,17 +30,37 @@ class TerminalDisplay extends Display {
         }
 
 	@Override
-	protected int getNumber() {
-                int     number;
+	public Move getMove(String playerName) {
+                int section, house;
+                int row, column;
+		int number;
 
-                Scanner read;
-
-                read   = new Scanner(System.in);
-                number = read.nextInt();
+                Move move;
                 
-                return number;
+                do {
+                        section = getNumber("Enter section, " + playerName + ": ");
+                        number  = getNumber("Enter number, "  + playerName + ": ");
+
+			house 	= this.board.getSection(section).index(number);
+
+                        row     = this.convertToRow(section, house);
+                        column  = this.convertToColumn(section, house);
+
+                        move    = new Move(
+                                                this.length,
+                                                row,
+                                                column
+                                          );
+                } while (
+                                !move.isOptionValid() ||
+                                !this.board.isSectionFree(section) ||
+                                !this.board.isHouseFree(section, house)
+                        );
+
+                return move;
         }
 	
+	@Override
 	public void update() {
                 String repr;
 

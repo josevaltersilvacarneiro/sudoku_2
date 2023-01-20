@@ -40,11 +40,6 @@ public abstract class Display {
 		return this.convertToCH(row, column);
 	}
 
-	protected int getNumber() {
-		// Not implemented
-		throw new UnsupportedOperationException();
-	}
-
 	public int getDimension() {
 		// Not implemented
 		throw new UnsupportedOperationException();
@@ -60,31 +55,9 @@ public abstract class Display {
 		throw new UnsupportedOperationException();
 	}
 
-	public Move getMove() {
-		int section, house;
-		int row, column;
-
-		Move move;
-		
-		do {
-			section = getNumber();
-			house   = getNumber();
-
-			row	= this.convertToRow(section, house);
-			column	= this.convertToColumn(section, house);
-
-			move    = new Move(
-						this.length,
-						row,
-						column
-					  );
-		} while (
-				!move.isOptionValid() ||
-				!this.board.isSectionFree(section) ||
-				!this.board.isHouseFree(section, house)
-			);
-
-		return move;
+	public Move getMove(String playerName) {
+		// Not implemented
+		throw new UnsupportedOperationException();
 	}
 
 	public boolean isRowFree(int row) {

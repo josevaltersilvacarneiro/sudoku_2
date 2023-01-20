@@ -49,7 +49,7 @@ public class Game {
 	public void play(Player player) {
 		Move move;
 
-		move = this.display.getMove();
+		move = this.display.getMove(player.getName());
 
 		if (!this.display.isRowFree(move.row))
 			player.setScore(
