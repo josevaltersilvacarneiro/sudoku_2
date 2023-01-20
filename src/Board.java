@@ -1,4 +1,4 @@
-class Board {
+clas Board {
 	int dimension;
 	int length;
 	Section board[];
@@ -25,22 +25,3 @@ class Board {
 		return this.board[section].isHouseFree(house);
 	}
 }
-/*
-	String show() {
-		String repr = "";
-
-		for (int row = 0; row < this.length; row++) {
-			for (int column = 0; column < this.length; column++) {
-				int section, house;
-
-				section = (row / this.dimension) * this.dimension + column / this.dimension;
-    				house = (row % this.dimension) * this.dimension + column % this.dimension;
-
-				repr += Integer.toString(this.board[section].index(house));
-			}
-			repr += "\n";
-		}
-		
-		return repr;
-	}*/
-
