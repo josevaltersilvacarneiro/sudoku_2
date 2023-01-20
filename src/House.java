@@ -6,4 +6,16 @@ class House {
 		this.free = true;
 		this.value = value;
 	}
+
+	public int getValue() {
+		return this.value;
+	}
+
+	public boolean getFree() {
+		return this.free;
+	}
+
+	public void setFree(boolean free) {
+		this.free = free;
+	}
 }
