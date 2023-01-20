@@ -18,6 +18,10 @@ class Section {
 			this.section[i] = new House(this.rand(i));
 	}
 
+	public House getHouse(int house) {
+		return this.section[house];
+	}
+
 	public boolean isHouseFree(int house) {
 		return this.section[house].free;
 	}
@@ -41,7 +45,15 @@ class Section {
 		return randn;
 	}
 
-	public int index(int index) {
-		return this.section[index].value;
+	public int index(int number) {
+		int i = 0;
+
+		for (House house : this.section) {
+			if (house.getValue() == number)
+				return i;
+			i++;
+		}
+
+		return -1;
 	}
 }
