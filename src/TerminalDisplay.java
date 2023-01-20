@@ -76,7 +76,10 @@ class TerminalDisplay extends Display {
                                 section = this.convertToSection(row, column);
                                 house   = this.convertToHouse(row, column);
 
-                                repr   += Integer.toString(this.board.getSection(section).index(house));
+				if (this.board.getSection(section).getHouse(house).getFree())
+                                	repr += Integer.toString(this.board.getSection(section).index(house));
+				else
+					repr += "X";
                         }
                         repr += "\n";
                 }
