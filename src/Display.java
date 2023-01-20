@@ -103,14 +103,44 @@ public abstract class Display {
 	}
 
 	public int rowSum(int row) {
-		return 0;
+		int section, house;
+		int rowSum = 0;
+
+		for (int column = 0; column < this.getLength(); column++) {
+			section = convertToSection(row, column);
+			house   = convertToHouse(row, column);
+
+			rowSum += this.board.getSection(section).getHouse(house).getValue();
+		}
+
+		return rowSum;
 	}
 
 	public int columnSum(int column) {
-		return 0;
+		int section, house;
+                int columnSum = 0; 
+                
+                for (int row = 0; row < this.getLength(); row++) {
+                        section = convertToSection(row, column);
+                        house   = convertToHouse(row, column);
+                        
+                        columnSum += this.board.getSection(section).getHouse(house).getValue();
+                }       
+                
+                return columnSum;
 	}
 
 	public int diagonalSum() {
-		return 1;
+		int section, house;
+                int diagonalSum = 0;
+
+                for (int i = 0; i < this.getLength(); i++) {       
+                        section = convertToSection(i, i);
+                        house   = convertToHouse(i, i);
+                        
+                        diagonalSum += this.board.getSection(section).getHouse(house).getValue();
+                }       
+                
+                return diagonalSum;
 	}
 }
