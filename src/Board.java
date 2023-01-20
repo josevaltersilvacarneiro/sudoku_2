@@ -3,22 +3,13 @@ class Board {
 	int length;
 	Section board[];
 
-	int[] rowSum;
-	int[] columnSum;
-	int   diagonalSum;
-
 	public Board() {
 		this.dimension = 2;
 		this.length = this.dimension * this.dimension;
 		
 		this.board = new Section[this.length];
-		
-		for (int i = 0; i < this.length; i++) {
-			this.board[i]     = new Section();
-			this.rowSum[i]    = 0;
-			this.columnSum[i] = 0;
-		}
-		this.diagonalSum	  = 0;
+		for (int i = 0; i < this.length; i++)
+			this.board[i] = new Section();
 	}
 
 	public Section getSection(int section) {
