@@ -1,4 +1,4 @@
-clas Board {
+class Board {
 	int dimension;
 	int length;
 	Section board[];
