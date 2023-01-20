@@ -61,15 +61,45 @@ public abstract class Display {
 	}
 
 	public boolean isRowFree(int row) {
-		return true;
+		int section, house;
+
+		for (int column = 0; column < this.getLength(); column++) {
+			section = convertToSection(row, column);
+			house   = convertToHouse(row, column);
+
+			if (this.board.getSection(section).getHouse(house).getFree())
+				return true;
+		}
+
+		return false;
 	}
 
 	public boolean isColumnFree(int column) {
-		return true;
+		int section, house;
+
+		for (int row = 0; row < this.getLength(); row++) {
+			section = convertToSection(row, column);
+			house   = convertToHouse(row, column);
+
+			if (this.board.getSection(section).getHouse(house).getFree())
+				return true;
+		}
+
+		return false;
 	}
 
 	public boolean isDiagonalFree() {
-		return true;
+		int section, house;
+
+		for (int i = 0; i < this.getLength(); i++) {
+			section = convertToSection(i, i);
+			house   = convertToHouse(i, i);
+
+			if (this.board.getSection(section).getHouse(house).getFree())
+				return true;
+		}
+
+		return false;
 	}
 
 	public int rowSum(int row) {
