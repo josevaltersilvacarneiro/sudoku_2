@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 class TerminalDisplay extends Display {
 
+	public TerminalDisplay() {
+        }
+
         public int getDimension() {
                 return 2;
         }
@@ -12,7 +15,8 @@ class TerminalDisplay extends Display {
 		return playerNames;
         }
 
-	private int getNumber() {
+	@Override
+	protected int getNumber() {
                 int     number;
 
                 Scanner read;

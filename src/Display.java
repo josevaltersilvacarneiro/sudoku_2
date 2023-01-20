@@ -40,7 +40,7 @@ public abstract class Display {
 		return this.convertToCH(row, column);
 	}
 
-	private int getNumber() {
+	protected int getNumber() {
 		// Not implemented
 		throw new UnsupportedOperationException();
 	}
@@ -51,6 +51,11 @@ public abstract class Display {
 	}
 
 	public String[] getPlayers() {
+		// Not implemented
+		throw new UnsupportedOperationException();
+	}
+	
+	public void update() {
 		// Not implemented
 		throw new UnsupportedOperationException();
 	}
