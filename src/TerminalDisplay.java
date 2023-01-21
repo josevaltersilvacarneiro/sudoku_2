@@ -57,6 +57,7 @@ class TerminalDisplay extends Display {
                                 !this.board.isHouseFree(section, house)
                         );
 
+		this.board.getSection(section).getHouse(house).setFree(false); // chosen house
                 return move;
         }
 	
