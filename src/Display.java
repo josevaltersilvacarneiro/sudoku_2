@@ -40,25 +40,10 @@ public abstract class Display {
 		return this.convertToCH(row, column);
 	}
 
-	public int getDimension() {
-		// Not implemented
-		throw new UnsupportedOperationException();
-	}
-
-	public String[] getPlayers() {
-		// Not implemented
-		throw new UnsupportedOperationException();
-	}
-	
-	public void update() {
-		// Not implemented
-		throw new UnsupportedOperationException();
-	}
-
-	public Move getMove(String playerName) {
-		// Not implemented
-		throw new UnsupportedOperationException();
-	}
+	public abstract int getDimension();
+	public abstract String[] getPlayers();
+	public abstract void update();
+	public abstract Move getMove(String playerName);
 
 	public boolean isRowFree(int row) {
 		int section, house;
