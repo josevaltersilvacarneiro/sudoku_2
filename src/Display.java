@@ -1,4 +1,4 @@
-public abstract class Display {
+public abstract class Display implements Interaction {
 	int     dimension;
 	int     length;
 	boolean quit;
@@ -39,11 +39,6 @@ public abstract class Display {
 	protected int convertToHouse(int row, int column) {
 		return this.convertToCH(row, column);
 	}
-
-	public abstract int getDimension();
-	public abstract String[] getPlayers();
-	public abstract void update();
-	public abstract Move getMove(String playerName);
 
 	public boolean isRowFree(int row) {
 		int section, house;
