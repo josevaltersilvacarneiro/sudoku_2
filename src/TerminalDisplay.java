@@ -38,8 +38,13 @@ class TerminalDisplay extends Display {
                 Move move;
                 
                 do {
-                        section = getNumber("Enter section, " + playerName + ": ");
-                        number  = getNumber("Enter number, "  + playerName + ": ");
+			do {
+                        	section = getNumber("Enter section, " + playerName + ": ");
+                        	number  = getNumber("Enter number, "  + playerName + ": ");
+
+			} while (!this.isOptionValid(section, number));
+			
+			section--; // The matrix index starts at zero
 
 			house 	= this.board.getSection(section).index(number);
 
@@ -52,7 +57,6 @@ class TerminalDisplay extends Display {
                                                 column
                                           );
                 } while (
-                                !move.isOptionValid() ||
                                 !this.board.isSectionFree(section) ||
                                 !this.board.isHouseFree(section, house)
                         );
