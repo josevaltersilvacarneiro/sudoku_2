@@ -39,6 +39,10 @@ public abstract class Display implements Interaction {
 	protected int convertToHouse(int row, int column) {
 		return this.convertToCH(row, column);
 	}
+	
+	protected boolean isOptionValid(int section, int number) {
+		return section <= 4 && section > 0 && number <= 4 && number > 0;
+	}
 
 	public boolean isRowFree(int row) {
 		int section, house;
