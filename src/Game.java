@@ -43,8 +43,8 @@ public class Game {
 	}
 
 	public void show() {
-		Collections.sort(this.players);
-		this.display.update();
+		//Collections.sort(this.players);
+		this.display.update(this.players);
 	}
 
 	public void play(Player player) {

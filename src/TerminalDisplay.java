@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class TerminalDisplay extends Display {
 
@@ -66,7 +67,7 @@ class TerminalDisplay extends Display {
         }
 	
 	@Override
-	public void update() {
+	public void update(ArrayList<Player> players) {
                 String repr;
 
                 repr = "";
@@ -94,5 +95,13 @@ class TerminalDisplay extends Display {
                         repr += "=";
 
                 System.out.println(repr);
+
+		for (Player player : players) {
+			System.out.println(String.format("%s\t\t%05d", player.getName(), player.getScore()));
+		}
+
+                for (int i = 0; i < 30; i++)
+                        System.out.print("=");
+		System.out.println("\n");
         }
 }
