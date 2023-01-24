@@ -1,4 +1,4 @@
-class Player {
+class Player implements Comparable<Player> {
 	/*
 	 * When instantiating a new Player object,
 	 * the player's name must be passed as ar-
@@ -41,5 +41,15 @@ class Player {
 
 	public void setScore(int score) {
 		this.score += score;
+	}
+
+	@Override
+	public int compareTo(Player player) {
+		if (this.getScore() > player.getScore())
+			return -1;
+		else if (this.getScore() < player.getScore())
+			return 1;
+		else
+			return 0;
 	}
 }

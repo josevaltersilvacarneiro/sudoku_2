@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Game {
 	private int     numberOfPlayers;
@@ -42,8 +43,8 @@ public class Game {
 	}
 
 	public void show() {
+		Collections.sort(this.players);
 		this.display.update();
-		//System.out.println(this.display.show());
 	}
 
 	public void play(Player player) {
