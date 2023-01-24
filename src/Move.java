@@ -7,8 +7,4 @@ class Move {
 		this.row    = row;
                 this.column = column;
 	}
-
-	public boolean isOptionValid() {
-		return 0 <= this.row && this.row < this.length && 0 <= this.column && this.column < this.length;
-	}
 }
