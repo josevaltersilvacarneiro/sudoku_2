@@ -97,7 +97,7 @@ class TerminalDisplay extends Display {
                 System.out.println(repr);
 
 		for (Player player : players) {
-			System.out.println(String.format("%s\t\t%05d", player.getName(), player.getScore()));
+			System.out.printf("%s\t\t%05d%n", player.getName(), player.getScore());
 		}
 
                 for (int i = 0; i < 30; i++)
