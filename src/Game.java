@@ -26,7 +26,7 @@ public class Game {
 	 * To find out who is the next player to
 	 * play, use the command below:
 	 *
-	 * nextPlayer = newGame.getNextPlayer();
+	 * Player nextPlayer = newGame.getNextPlayer();
 	 *
 	 * To wait for a player to play and pro-
 	 * cess his move, use the command below:
