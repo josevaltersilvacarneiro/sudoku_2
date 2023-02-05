@@ -43,6 +43,7 @@ public class Game {
 	}
 
 	public void show() {
+		@SuppressWarnings("unchecked")
 		ArrayList<Player> sortedPlayers = (ArrayList<Player>) this.players.clone();
 
 		Collections.sort(sortedPlayers); // Sorting the players before showing them
