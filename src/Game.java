@@ -56,7 +56,7 @@ public class Game {
 	}
 
 	public boolean getQuit() {
-		return this.quit;
+		return this.display.getQuit();
 	}
 
 	public Player getNextPlayer() {

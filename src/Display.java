@@ -44,6 +44,14 @@ public abstract class Display implements Interaction {
 		return section <= 4 && section > 0 && number <= 4 && number > 0;
 	}
 
+	public boolean getQuit() {
+		for (int i = 0; i < this.getLength(); i++)
+			if (this.board.isSectionFree(i))
+				return false;
+
+		return true;
+	}
+
 	public boolean isRowFree(int row) {
 		int section, house;
 
