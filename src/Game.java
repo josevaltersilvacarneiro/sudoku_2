@@ -2,6 +2,38 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Game {
+	/**
+	 * This is the main class of the game and
+	 * therefore it provides the communication
+	 * interface with the game.
+	 *
+	 * To instantiate it, use the command
+	 * below:
+	 *
+	 * bool graphicalDisplay = true;
+	 * Game newGame = Game(graphicalDisplay);
+	 *
+	 * To find out if the user has quit, use
+	 * the command below:
+	 *
+	 * bool quit = newGame.getQuit();
+	 *
+	 * To show the interaction interface, use
+	 * the command below:
+	 *
+	 * newGame.show();
+	 *
+	 * To find out who is the next player to
+	 * play, use the command below:
+	 *
+	 * nextPlayer = newGame.getNextPlayer();
+	 *
+	 * To wait for a player to play and pro-
+	 * cess his move, use the command below:
+	 *
+	 * newGame.play(nextPlayer);
+	 */
+
 	private int     numberOfPlayers;
 	private int     nextPlayer;
 	private boolean diagonal;
