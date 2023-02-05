@@ -18,6 +18,10 @@ class Section {
 			this.section[i] = new House(this.rand(i));
 	}
 
+	public int getLength() {
+		return this.length;
+	}
+
 	public boolean getFree() {
 		for (int i = 0; i < this.getLength(); i++)
 			if (this.isHouseFree(i))
