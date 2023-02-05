@@ -43,8 +43,10 @@ public class Game {
 	}
 
 	public void show() {
-		//Collections.sort(this.players);
-		this.display.update(this.players);
+		ArrayList<Player> sortedPlayers = (ArrayList<Player>) this.players.clone();
+
+		Collections.sort(sortedPlayers); // Sorting the players before showing them
+		this.display.update(sortedPlayers);
 	}
 
 	public void play(Player player) {
