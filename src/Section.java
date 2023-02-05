@@ -3,14 +3,12 @@ import java.util.Random;
 class Section {
 	int dimension;
 	int length;
-	boolean free;
 
 	House section[];
 
 	public Section() {
 		this.dimension = 2;
 		this.length    = this.dimension * this.dimension;
-		this.free      = true;
 
 		this.section = new House[this.length];
 
