@@ -8,5 +8,7 @@ public class Sudoku {
 			game.play(
 					game.getNextPlayer());
 		}
+
+		game.show(); // Ending
         }       
 }       
