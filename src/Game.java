@@ -64,7 +64,7 @@ public class Game {
 		
 		if (!this.display.isDiagonalFree() && !this.diagonal) {
 			player.setScore(
-					this.display.diagonalSum());
+					this.display.diagonalSum() * 2);
 			this.diagonal = true;
 		}
 	}
