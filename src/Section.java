@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.security.SecureRandom;
 
 class Section {
 	int dimension;
@@ -38,21 +38,21 @@ class Section {
 
 	protected int rand(int end) {
 		boolean found;
-		int randn;
+		int randN;
 
-		Random generator = new Random();
+		SecureRandom generator = new SecureRandom();
 
 		do {
 			found = false;
 
-			randn = generator.nextInt(this.length)+1;
+			randN = 1 + generator.nextInt(this.length);
 
 			for (int i = 0; i < end && !found; i++)
-				if (randn == this.section[i].value)
+				if (randN == this.section[i].value)
 					found = true;
 		} while (found);
 
-		return randn;
+		return randN;
 	}
 
 	public int index(int number) {
