@@ -27,13 +27,9 @@ class Section {
 			this.section[i] = new House(this.rand(i));
 	}
 
-	public int getLength() {
-		return this.length;
-	}
-
-	public boolean getFree() {
-		for (int i = 0; i < this.getLength(); i++)
-			if (this.isHouseFree(i))
+	public boolean isFree() {
+		for (int i = 0; i < this.length; i++)
+			if (this.getHouse(i).isFree())
 				return true;
 
 		return false;
@@ -41,10 +37,6 @@ class Section {
 
 	public House getHouse(int house) {
 		return this.section[house];
-	}
-
-	public boolean isHouseFree(int house) {
-		return this.section[house].free;
 	}
 
 	protected int rand(int end) {

@@ -17,10 +17,10 @@ class Board {
 	}
 
 	public boolean isSectionFree(int section) {
-		return this.board[section].getFree();
+		return this.board[section].isFree();
 	}
 
 	public boolean isHouseFree(int section, int house) {
-		return this.board[section].isHouseFree(house);
+		return this.board[section].getHouse(house).isFree();
 	}
 }

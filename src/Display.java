@@ -59,7 +59,7 @@ public abstract class Display implements Interaction {
 			section = convertToSection(row, column);
 			house   = convertToHouse(row, column);
 
-			if (this.board.getSection(section).getHouse(house).getFree())
+			if (this.board.getSection(section).getHouse(house).isFree())
 				return true;
 		}
 
@@ -73,7 +73,7 @@ public abstract class Display implements Interaction {
 			section = convertToSection(row, column);
 			house   = convertToHouse(row, column);
 
-			if (this.board.getSection(section).getHouse(house).getFree())
+			if (this.board.getSection(section).getHouse(house).isFree())
 				return true;
 		}
 
@@ -87,7 +87,7 @@ public abstract class Display implements Interaction {
 			section = convertToSection(i, i);
 			house   = convertToHouse(i, i);
 
-			if (this.board.getSection(section).getHouse(house).getFree())
+			if (this.board.getSection(section).getHouse(house).isFree())
 				return true;
 		}
 

@@ -11,7 +11,7 @@ class House {
 		return this.value;
 	}
 
-	public boolean getFree() {
+	public boolean isFree() {
 		return this.free;
 	}
 

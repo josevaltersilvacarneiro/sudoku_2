@@ -82,7 +82,7 @@ class TerminalDisplay extends Display {
                                 section = this.convertToSection(row, column);
                                 house   = this.convertToHouse(row, column);
 
-				if (!this.board.getSection(section).getHouse(house).getFree())
+				if (!this.board.getSection(section).getHouse(house).isFree())
 					repr += String.format("%02d|",
 							this.board.getSection(section).getHouse(house).getValue());
 				else
