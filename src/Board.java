@@ -9,7 +9,7 @@ class Board {
 		
 		this.board = new Section[this.length];
 		for (int i = 0; i < this.length; i++)
-			this.board[i] = new Section();
+			this.board[i] = new Section(this.dimension);
 	}
 
 	public Section getSection(int section) {
