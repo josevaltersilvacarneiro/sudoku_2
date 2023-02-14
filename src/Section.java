@@ -21,7 +21,7 @@ class Section {
 		this.dimension = dimension;
 		this.length    = (int) Math.pow(this.dimension, 2);
 
-		this.section = new House[this.length];
+		this.section   = new House[this.length];
 
 		for (int i = 0; i < this.length; i++)
 			this.section[i] = new House(this.rand(i));
