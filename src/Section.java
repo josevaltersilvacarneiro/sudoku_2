@@ -12,10 +12,10 @@ class Section {
 	 * Section newSection = new Section(2);
 	 */
 
-	int dimension;
-	int length;
+	private int dimension;
+	private int length;
 
-	House section[];
+	private House section[];
 
 	public Section(int dimension) {
 		this.dimension = dimension;
