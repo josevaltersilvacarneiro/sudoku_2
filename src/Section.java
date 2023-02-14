@@ -1,6 +1,17 @@
 import java.security.SecureRandom;
 
 class Section {
+	/**
+	 * This class represents a Section of
+	 * the Game Board.
+	 *
+	 * When instantiating a new Section object,
+	 * the dimension must be passed as argument.
+	 * For example:
+	 *
+	 * Section newSection = new Section(2);
+	 */
+
 	int dimension;
 	int length;
 
