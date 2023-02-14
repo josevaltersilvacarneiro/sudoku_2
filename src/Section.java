@@ -39,7 +39,7 @@ class Section {
 		return this.section[house];
 	}
 
-	protected int rand(int end) {
+	private int rand(int end) {
 		boolean found;
 		int randN;
 
