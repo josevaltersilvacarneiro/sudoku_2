@@ -19,7 +19,7 @@ class Section {
 
 	public Section() {
 		this.dimension = 2;
-		this.length    = this.dimension * this.dimension;
+		this.length    = (int) Math.pow(this.dimension, 2);
 
 		this.section = new House[this.length];
 
