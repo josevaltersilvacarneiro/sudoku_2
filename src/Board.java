@@ -19,11 +19,14 @@ class Board extends Utils {
 
 		for (int row = 0; row < this.length; row++) {
 			for (int column = 0; column < this.length; column++) {
-				section = Board.convertToRowSection(row, column);
-				house   = Board.convertToColumnHouse(row, column);
+				section = Board.convertToRowSection(this.dimension, row, column);
+				house   = Board.convertToColumnHouse(this.dimension, row, column);
 
-				str += String.format("%02d|",
+				if (!this.getSection(section).getHouse(house).isFree())
+					str += String.format("%02d|",
 							this.getSection(section).getHouse(house).getValue());
+				else
+					str += "XX|";
 			}
 			str += "\n";
 		}
