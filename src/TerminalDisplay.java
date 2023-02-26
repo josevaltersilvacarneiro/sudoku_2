@@ -6,6 +6,14 @@ class TerminalDisplay extends Display {
 	public TerminalDisplay() {
         }
 
+	private void printHyphens() {
+		int amountOfHyphens = 5 * this.getLength();
+
+		for (int i = 0; i < amountOfHyphens; i++)
+			System.out.print("=");
+		System.out.println();
+	}
+
 	private int getNumber(String message) {
         	int     number;
 
@@ -68,27 +76,16 @@ class TerminalDisplay extends Display {
 	
 	@Override
 	public void update(ArrayList<Player> players) {
-                String repr;
                 int section, house;
 
-                repr = "";
-                for (int i = 0; i < 30; i++)
-                        repr += "=";
-                repr += "\n";
-
-		repr += this.board; /* Board representation in string form */
-
-                for (int i = 0; i < 30; i++)
-                        repr += "=";
-
-                System.out.println(repr);
+		this.printHyphens();
+		System.out.print(this.board); /* Board representation in string form */
+		this.printHyphens();
 
 		for (Player player : players) {
 			System.out.printf("%s\t\t%05d%n", player.getName(), player.getScore());
 		}
 
-                for (int i = 0; i < 30; i++)
-                        System.out.print("=");
-		System.out.println("\n");
+		this.printHyphens();
         }
 }
