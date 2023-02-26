@@ -76,19 +76,7 @@ class TerminalDisplay extends Display {
                         repr += "=";
                 repr += "\n";
 
-		for (int row = 0; row < this.getLength(); row++) {
-                        for (int column = 0; column < this.getLength(); column++) {
-                                section = this.convertToSection(row, column);
-                                house   = this.convertToHouse(row, column);
-
-				if (!this.board.getSection(section).getHouse(house).isFree())
-					repr += String.format("%02d|",
-							this.board.getSection(section).getHouse(house).getValue());
-				else
-					repr += "XX|";
-                        }
-                        repr += "\n";
-                }
+		repr += this.board; /* Board representation in string form */
 
                 for (int i = 0; i < 30; i++)
                         repr += "=";

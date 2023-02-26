@@ -10,8 +10,6 @@ public abstract class Display extends Utils implements Interaction {
 		this.length    = this.dimension * this.dimension;
 		this.board     = new Board(this.dimension);
 		this.quit      = false;
-
-		Utils.dimension = this.dimension;
 	}
 
 	protected int getLength() {
@@ -19,19 +17,19 @@ public abstract class Display extends Utils implements Interaction {
 	}
 
 	protected int convertToRow(int section, int house) {
-		return Display.convertToRowSection(section, house);
+		return Display.convertToRowSection(this.dimension, section, house);
 	}
 
 	protected int convertToColumn(int section, int house) {
-		return Display.convertToColumnHouse(section, house);
+		return Display.convertToColumnHouse(this.dimension, section, house);
 	}
 
 	protected int convertToSection(int row, int column) {
-		return Display.convertToRowSection(row, column);
+		return Display.convertToRowSection(this.dimension, row, column);
 	}
 
 	protected int convertToHouse(int row, int column) {
-		return Display.convertToColumnHouse(row, column);
+		return Display.convertToColumnHouse(this.dimension, row, column);
 	}
 	
 	protected boolean isOptionValid(int section, int number) {
