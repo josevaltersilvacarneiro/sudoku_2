@@ -1,6 +1,11 @@
 public class Sudoku {
         public static void main(String[] args) {
-		Game game = new Game();
+		boolean graphic = false;
+
+		if (args.length == 1 && args[0].equals("-g"))
+			graphic = true;
+
+		Game game = new Game(graphic);
 
 		while (!game.getQuit()) {
 
@@ -10,5 +15,5 @@ public class Sudoku {
 		}
 
 		game.show(); // Ending
-        }       
-}       
+        }
+}

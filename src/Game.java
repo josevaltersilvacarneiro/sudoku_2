@@ -42,8 +42,8 @@ public class Game {
 	private ArrayList<Player> players;
 	private Display   	  display;
 
-	public Game() {
-		this.display  	     = new TerminalDisplay();
+	public Game(boolean graphic) {
+		this.display  	     = graphic ? new GraphicDisplay() : new TerminalDisplay();
 		this.players         = new ArrayList<Player>();
 
 		for (String playerName : this.display.getPlayers())
