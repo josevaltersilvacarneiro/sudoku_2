@@ -1,4 +1,4 @@
-public abstract class Display implements Interaction {
+public abstract class Display extends Utils implements Interaction {
 	int     dimension;
 	int     length;
 	boolean quit;
@@ -10,34 +10,28 @@ public abstract class Display implements Interaction {
 		this.length    = this.dimension * this.dimension;
 		this.board     = new Board();
 		this.quit      = false;
+
+		Utils.dimension = this.dimension;
 	}
 
 	protected int getLength() {
 		return this.length;
 	}
 
-	private int convertToRS(int sr, int hc) {
-		return (sr / this.dimension) * this.dimension + hc / this.dimension;
-	}
-
-	private int convertToCH(int sr, int hc) {
-		return (sr % this.dimension) * this.dimension + hc % this.dimension;
-	}
-
 	protected int convertToRow(int section, int house) {
-		return this.convertToRS(section, house);
+		return Display.convertToRowSection(section, house);
 	}
 
 	protected int convertToColumn(int section, int house) {
-		return this.convertToCH(section, house);
+		return Display.convertToColumnHouse(section, house);
 	}
 
 	protected int convertToSection(int row, int column) {
-		return this.convertToRS(row, column);
+		return Display.convertToRowSection(row, column);
 	}
 
 	protected int convertToHouse(int row, int column) {
-		return this.convertToCH(row, column);
+		return Display.convertToColumnHouse(row, column);
 	}
 	
 	protected boolean isOptionValid(int section, int number) {

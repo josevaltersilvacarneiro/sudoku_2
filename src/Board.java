@@ -19,8 +19,8 @@ class Board extends Utils {
 
 		for (int row = 0; row < this.length; row++) {
 			for (int column = 0; column < this.length; column++) {
-				section = Board.convertToRowSection(this.dimension, row, column);
-				house   = Board.convertToColumnHouse(this.dimension, row, column);
+				section = Board.convertToRowSection(row, column);
+				house   = Board.convertToColumnHouse(row, column);
 
 				str += String.format("%02d|",
 							this.getSection(section).getHouse(house).getValue());
