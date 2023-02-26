@@ -8,7 +8,7 @@ public abstract class Display extends Utils implements Interaction {
 	public Display() {
 		this.dimension = this.getDimension();
 		this.length    = this.dimension * this.dimension;
-		this.board     = new Board();
+		this.board     = new Board(this.dimension);
 		this.quit      = false;
 
 		Utils.dimension = this.dimension;

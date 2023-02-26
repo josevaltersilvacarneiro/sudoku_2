@@ -3,9 +3,9 @@ class Board extends Utils {
 	int length;
 	Section board[];
 
-	public Board() {
-		this.dimension = 2;
-		this.length = this.dimension * this.dimension;
+	public Board(int dimension) {
+		this.dimension = dimension;
+		this.length    = this.dimension * this.dimension;
 		
 		this.board = new Section[this.length];
 		for (int i = 0; i < this.length; i++)

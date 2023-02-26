@@ -3,13 +3,13 @@ public abstract class Utils {
 	 *
 	 */
 
-	protected static int dimension;
+	public static int dimension;
 
-	static public int convertToRowSection(int sectionRow, int houseColumn) {
+	public static int convertToRowSection(int sectionRow, int houseColumn) {
 		return (sectionRow / dimension) * Utils.dimension + houseColumn / Utils.dimension;
 	}
 
-	static public int convertToColumnHouse(int sectionRow, int houseColumn) {
+	public static int convertToColumnHouse(int sectionRow, int houseColumn) {
 		return (sectionRow / dimension) * Utils.dimension + houseColumn / Utils.dimension;
 	}
 }
