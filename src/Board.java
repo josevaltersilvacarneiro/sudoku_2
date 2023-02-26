@@ -12,6 +12,7 @@ class Board extends Utils {
 			this.board[i] = new Section(this.dimension);
 	}
 
+	@Override
 	public String toString() {
 		String str = "";
 		int section, house;
@@ -21,11 +22,8 @@ class Board extends Utils {
 				section = Board.convertToRowSection(this.dimension, row, column);
 				house   = Board.convertToColumnHouse(this.dimension, row, column);
 
-				if (!this.getSection(section).getHouse(house).isFree())
-					str += String.format("%02d|",
+				str += String.format("%02d|",
 							this.getSection(section).getHouse(house).getValue());
-				else
-					str += "XX|";
 			}
 			str += "\n";
 		}

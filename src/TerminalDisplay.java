@@ -69,6 +69,7 @@ class TerminalDisplay extends Display {
 	@Override
 	public void update(ArrayList<Player> players) {
                 String repr;
+                int section, house;
 
                 repr = "";
                 for (int i = 0; i < 30; i++)
@@ -77,8 +78,6 @@ class TerminalDisplay extends Display {
 
 		for (int row = 0; row < this.getLength(); row++) {
                         for (int column = 0; column < this.getLength(); column++) {
-                                int section, house;
-
                                 section = this.convertToSection(row, column);
                                 house   = this.convertToHouse(row, column);
 
