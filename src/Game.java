@@ -87,13 +87,13 @@ public class Game {
 
 		move = this.display.getMove(player.getName());
 
-		if (!this.display.isRowFree(move.row))
+		if (!this.display.isRowFree(move.getRow()))
 			player.setScore(
-					this.display.rowSum(move.row));
+					this.display.rowSum(move.getRow()));
 
-		if (!this.display.isColumnFree(move.column))
+		if (!this.display.isColumnFree(move.getColumn()))
 			player.setScore(
-					this.display.columnSum(move.column));
+					this.display.columnSum(move.getColumn()));
 		
 		if (!this.display.isDiagonalFree() && !this.diagonal) {
 			player.setScore(
