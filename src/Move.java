@@ -25,7 +25,7 @@ class Move {
 
 	public Move(int length, int row, int column) {
 		if (
-			length < 4 ||
+			!this.isLengthValid(length) ||
 			row    < 0 ||
 			column < 0 ||
 			row    >= length ||
@@ -36,6 +36,11 @@ class Move {
 		this.length = length;
 		this.row    = row;
                 this.column = column;
+	}
+
+	private boolean isLengthValid(int length) {
+		return length >= 4 &&
+				Math.sqrt(length) * Math.floor(Math.sqrt(length)) == length;
 	}
 
 	public int getRow() {
