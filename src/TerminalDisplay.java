@@ -61,7 +61,7 @@ class TerminalDisplay extends Display {
                         column  = this.convertToColumn(section, house);
 
                         move    = new Move(
-                                                this.length,
+                                                this.getLength(),
                                                 row,
                                                 column
                                           );

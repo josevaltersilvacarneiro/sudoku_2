@@ -19,7 +19,7 @@ class GraphicDisplay extends Display {
 	public Move getMove(String playerName) {
 		Move move;
 		
-		move = new Move(this.length, 0, 0);
+		move = new Move(this.getLength(), 0, 0);
 
 		return move;
 	}
