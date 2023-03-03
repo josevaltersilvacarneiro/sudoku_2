@@ -1,11 +1,11 @@
 import static pkg.Utils.*;
 
 public abstract class Display implements Interaction {
-	int     dimension;
-	int     length;
-	boolean quit;
+	private   final int     dimension;
+	private   final int     length;
+	protected final Board   board;
 
-	Board   board;
+	private boolean quit;
 
 	public Display() {
 		this.dimension = this.getDimension();
