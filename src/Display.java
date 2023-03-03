@@ -9,7 +9,7 @@ public abstract class Display implements Interaction {
 
 	public Display() {
 		this.dimension = this.getDimension();
-		this.length    = this.dimension * this.dimension;
+		this.length    = (int) java.lang.Math.pow(this.dimension, 2);
 		this.board     = new Board(this.dimension);
 		this.quit      = false;
 	}
