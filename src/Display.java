@@ -1,6 +1,19 @@
 import static pkg.Utils.*;
 
 public abstract class Display implements Interaction {
+	/**
+	 * This abstract class implements the interface with
+	 * the players.
+	 *
+	 * To be used, the class that represents the display
+	 * type must extend it and implement the Interaction
+	 * interface. For example:
+	 *
+	 * public TypeDisplay extends Display {
+	 * 	[...]
+	 * }
+	 */
+
 	private   final int     dimension;
 	private   final int     length;
 	protected final Board   board;
