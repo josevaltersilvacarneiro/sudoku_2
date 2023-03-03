@@ -1,4 +1,6 @@
-class Board extends Utils {
+import static pkg.Utils.*;
+
+class Board {
 	int dimension;
 	int length;
 	Section board[];
@@ -19,8 +21,8 @@ class Board extends Utils {
 
 		for (int row = 0; row < this.length; row++) {
 			for (int column = 0; column < this.length; column++) {
-				section = Board.convertToRowSection(this.dimension, row, column);
-				house   = Board.convertToColumnHouse(this.dimension, row, column);
+				section = convertToRowSection(this.dimension, row, column);  // See Utils.java
+				house   = convertToColumnHouse(this.dimension, row, column); // See Utils.java
 
 				if (!this.getSection(section).getHouse(house).isFree())
 					str += String.format("%02d|",

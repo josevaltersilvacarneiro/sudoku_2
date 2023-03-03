@@ -1,4 +1,6 @@
-public abstract class Display extends Utils implements Interaction {
+import static pkg.Utils.*;
+
+public abstract class Display implements Interaction {
 	int     dimension;
 	int     length;
 	boolean quit;
@@ -17,19 +19,19 @@ public abstract class Display extends Utils implements Interaction {
 	}
 
 	protected int convertToRow(int section, int house) {
-		return Display.convertToRowSection(this.dimension, section, house);
+		return convertToRowSection(this.dimension, section, house);  // See Utils.java
 	}
 
 	protected int convertToColumn(int section, int house) {
-		return Display.convertToColumnHouse(this.dimension, section, house);
+		return convertToColumnHouse(this.dimension, section, house); // See Utils.java
 	}
 
 	protected int convertToSection(int row, int column) {
-		return Display.convertToRowSection(this.dimension, row, column);
+		return convertToRowSection(this.dimension, row, column);     // See Utils.java
 	}
 
 	protected int convertToHouse(int row, int column) {
-		return Display.convertToColumnHouse(this.dimension, row, column);
+		return convertToColumnHouse(this.dimension, row, column);    // See Utils.java
 	}
 	
 	protected boolean isOptionValid(int section, int number) {
