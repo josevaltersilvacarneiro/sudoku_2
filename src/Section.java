@@ -51,7 +51,7 @@ class Section {
 			randN = 1 + generator.nextInt(this.length);
 
 			for (int i = 0; i < end && !found; i++)
-				if (randN == this.section[i].value)
+				if (randN == this.section[i].getValue())
 					found = true;
 		} while (found);
 
