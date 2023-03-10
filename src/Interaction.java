@@ -11,8 +11,8 @@ public abstract interface Interaction {
 	 * update()	  refreshes the display.
 	 */
 
-	public abstract int getDimension();
+	public abstract int	 getDimension();
         public abstract String[] getPlayers();
-        public abstract Move getMove(String playerName);
-        public abstract void update(ArrayList<Player> players);
+        public abstract Move	 getMove(String playerName);
+        public abstract void	 update(ArrayList<Player> players);
 }
